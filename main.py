@@ -26,7 +26,7 @@ while True:
             departamento = input("Departamento:").strip()
 
 
-            if codigo == "" or nombre == "" or categoria == "": 
+            if id == "" or nombre == "" or categoria == "": 
                 print("Los datos de texto son obligatorios.") 
             elif peso < 0 : 
                 print("El peso no puede ser negativo") 
