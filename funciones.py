@@ -35,7 +35,7 @@ def obtener_inventario():
     return inventario
 
 def buscar_por_id(id):
-    return vaca_por_aretes.get(int(id))
+    return buscar_por_id.get(int(id))
 
 
 def obtener_historial(): 
