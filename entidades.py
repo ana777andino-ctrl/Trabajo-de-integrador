@@ -5,7 +5,7 @@ from dataclasses import dataclass
 class vaca:
     id:int
     nombre: str
-    categoria: str
+    raza: str
     cédula: str
     color: str
     peso: float

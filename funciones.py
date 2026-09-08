@@ -1,8 +1,8 @@
 from entidades import vaca
-from datos import inventario, vacas_por_aretes, historial_movimientos
+from Datos import inventario, vacas_por_aretes, historial_movimiento
 
 
-def registrar_vaca(id, nombre, categoria, cédula, color, peso, departamento ):
+def registrar_vaca(id, nombre, raza, cédula, color, peso, departamento ):
 
     id_entero =int(id)
 
@@ -12,7 +12,7 @@ def registrar_vaca(id, nombre, categoria, cédula, color, peso, departamento ):
     nuevo = vaca(
         id=id_entero,
         nombre= nombre,
-        categoria= categoria,
+        raza= raza,
         cédula= cédula,
         color= color,
         peso= float(peso),
@@ -23,9 +23,10 @@ def registrar_vaca(id, nombre, categoria, cédula, color, peso, departamento ):
     inventario.append(nuevo)
     vacas_por_aretes[id_entero] = nuevo
 
-    historial_movimientos.append({
-        "tipo": "registro",
+    historial_movimiento.append({
+        "ID de arete": id,
         "nombre": nombre,
+        "raza":raza,
         "departamento": departamento
 })
 
@@ -35,8 +36,8 @@ def obtener_inventario():
     return inventario
 
 def buscar_por_id(id):
-    return buscar_por_id.get(int(id))
+    return vacas_por_aretes.get(int(id))
 
 
 def obtener_historial(): 
-    return historial_movimientos
+    return historial_movimiento
