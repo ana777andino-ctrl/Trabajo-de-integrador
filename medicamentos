@@ -1,0 +1,73 @@
+import flet as ft
+
+
+def main(page: ft.Page):
+    page.title = "Medicamentos del Ganado"
+    page.padding = 20
+
+    id_medicamento = ft.TextField(
+        label="ID del medicamento",
+        width=400
+    )
+
+    id_vaca = ft.TextField(
+        label="ID de la vaca",
+        width=400
+    )
+
+    fecha = ft.TextField(
+        label="Fecha",
+        width=400
+    )
+
+    nombre_medicamento = ft.TextField(
+        label="Nombre del medicamento",
+        width=400
+    )
+
+    dosis = ft.TextField(
+        label="Dosis",
+        width=400
+    )
+
+    motivo = ft.TextField(
+        label="Motivo",
+        width=400
+    )
+
+    observaciones = ft.TextField(
+        label="Observaciones",
+        width=400
+    )
+
+    mensaje = ft.Text()
+
+    def guardar(e):
+        mensaje.value = "Medicamento registrado correctamente."
+        mensaje.update()
+
+    page.add(
+        ft.Text(
+            "REGISTRO DE MEDICAMENTOS",
+            size=28,
+            weight=ft.FontWeight.BOLD
+        ),
+
+        id_medicamento,
+        id_vaca,
+        fecha,
+        nombre_medicamento,
+        dosis,
+        motivo,
+        observaciones,
+
+        ft.ElevatedButton(
+            text="Guardar medicamento",
+            on_click=guardar
+        ),
+
+        mensaje
+    )
+
+
+ft.app(target=main)
